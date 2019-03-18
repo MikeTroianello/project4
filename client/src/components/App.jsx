@@ -42,7 +42,7 @@ export default class App extends Component {
           {!api.isLoggedIn() && <NavLink to="/signup">Signup</NavLink>}
           {!api.isLoggedIn() && <NavLink to="/login">Login</NavLink>}
           {api.isLoggedIn() && <Link to="/" onClick={(e) => this.handleLogoutClick(e)}>Logout</Link>}
-          <NavLink to="/secret">Secret</NavLink>
+          <NavLink to="/CreateStory">Secret</NavLink>
         </header>
         <Switch>
 
@@ -58,6 +58,10 @@ export default class App extends Component {
           />
           <Route
             path='/login'
+            render={(props) => <Login {...props} setUser={this.setUser}/>}
+          />
+          <Route
+            path='/CreateStory'
             render={(props) => <Login {...props} setUser={this.setUser}/>}
           />
           

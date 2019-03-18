@@ -11,7 +11,7 @@ export default class Home extends Component {
     console.log(api.getLocalStorageUser())
 
     Axios.get('http://localhost:5000/api/whatever',).then(res=>{
-      console.log(res)
+      console.log(res, 'should see this')
     })
 
   }
@@ -22,7 +22,9 @@ export default class Home extends Component {
       <div className="Home">
         <h2>Home</h2>
         <p>This is an interactive story in which anyone can play a part in the creation and expansion in the world.</p><br></br>
-        <p><a href="Signup">Create an account</a> or <a href="Login">Log in</a> to start playing!</p>
+        
+        {!api.isLoggedIn() && <p><a href="Signup">Create an account</a> or <a href="Login">Log in</a> to start playing!</p>}
+        {api.isLoggedIn() && <p><a href="Story">Let's Play!</a> </p>}
       </div>
     );
   }

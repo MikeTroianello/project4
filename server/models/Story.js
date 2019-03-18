@@ -1,7 +1,7 @@
 const mongoose = require('mongoose');
 const Schema = mongoose.Schema;
 
-const pageSchema = new Schema({
+const storySchema = new Schema({
   title: String,
   content: String,
   creatorId: String,
@@ -9,5 +9,5 @@ const pageSchema = new Schema({
   teaser: String
 })
 
-const Page = mongoose.model("Page", pageSchema);
-module.exports = Page;
+const Story = mongoose.model("Page", storySchema);
+module.exports = Story;

@@ -5,8 +5,8 @@ const router = express.Router();
 
 
 router.get("/whatever", (req, res, next) => {
-  console.log('in whatever',req.user)
-  res.json({user:req.user})
+  console.log('in whatever u can pass things back from here',req.user)
+  res.json({user:req.user, whateveruwant:'hello michael'})
 })
 
 
