@@ -2,6 +2,7 @@ const express = require("express")
 const passport = require('passport')
 const router = express.Router()
 const User = require("../models/User")
+const Story = require("../models/Story")
 
 // Bcrypt to encrypt passwords
 const bcrypt = require("bcrypt")
@@ -99,9 +100,14 @@ router.get("/logout", (req, res) => {
   res.json({ message: 'You are out!' })
 })
 
-router.post("/secret", (req, res, next) => {
+
+
+//CREATE NEW STORY
+router.post("/createstory", (req, res, next) => {
   res.json({message: "https://youtu.be/UNhphyF74sA"})
 })
+
+
 
 
 module.exports = router

@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { Route, Link, NavLink, Switch } from 'react-router-dom';
 import Home from './pages/Home';
-
+import CreateStory from './pages/CreateStory';
 import Login from './pages/Login';
 import Signup from './pages/Signup';
 import api from '../api';
@@ -42,7 +42,7 @@ export default class App extends Component {
           {!api.isLoggedIn() && <NavLink to="/signup">Signup</NavLink>}
           {!api.isLoggedIn() && <NavLink to="/login">Login</NavLink>}
           {api.isLoggedIn() && <Link to="/" onClick={(e) => this.handleLogoutClick(e)}>Logout</Link>}
-          <NavLink to="/CreateStory">Secret</NavLink>
+          <NavLink to="/createstory">Create Story</NavLink>
         </header>
         <Switch>
 
@@ -61,8 +61,8 @@ export default class App extends Component {
             render={(props) => <Login {...props} setUser={this.setUser}/>}
           />
           <Route
-            path='/CreateStory'
-            render={(props) => <Login {...props} setUser={this.setUser}/>}
+            path='/createstory'
+            render={(props) => <CreateStory {...props} setUser={this.setUser}/>}
           />
           
           

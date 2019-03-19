@@ -1,7 +1,7 @@
 const express = require('express');
 const { isLoggedIn } = require('../middlewares')
 const router = express.Router();
-
+const Story = require("../models/Story")
 
 
 router.get("/whatever", (req, res, next) => {

@@ -7,6 +7,11 @@ const storySchema = new Schema({
   creatorId: String,
   idOfLastPage: String,
   teaser: String
+  startingPage: {
+    type:Boolean, 
+    default:false
+  },
+  pageNumber: Number
 })
 
 const Story = mongoose.model("Page", storySchema);
