@@ -43,7 +43,7 @@ export default class App extends Component {
           {!api.isLoggedIn() && <NavLink to="/signup">Signup</NavLink>}
           {!api.isLoggedIn() && <NavLink to="/login">Login</NavLink>}
           {api.isLoggedIn() && <Link to="/" onClick={(e) => this.handleLogoutClick(e)}>Logout</Link>}
-          <NavLink to="/createstory">Create Story</NavLink>
+          <NavLink to="/readstory">Play a Story</NavLink>
         </header>
         <Switch>
 

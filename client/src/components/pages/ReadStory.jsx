@@ -20,7 +20,7 @@ export default class ReadStory extends Component {
     })
   }
 
-  openPanel(props){
+  openPanel(){
     console.log("BUTTON CLICKED")
       this.setState({
         show: true
@@ -40,10 +40,12 @@ export default class ReadStory extends Component {
   render(){
       return(
         <div>
-          <h1>STORY PAGE</h1>
-          <button onClick={(e) => this.openPanel()}>Create a new Path!</button>
-          {this.state.show && <CreateStory {...this.props}/>}
+          <h1>Choose your quest</h1>
+          
           {this.showStories()}
+
+          <button onClick={(e) => this.openPanel()}>New Story</button>
+          {this.state.show && <CreateStory {...this.props}/>}
         </div>
       )
     }
