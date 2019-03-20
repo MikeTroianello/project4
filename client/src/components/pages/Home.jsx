@@ -1,7 +1,8 @@
 import React, { Component } from 'react';
 import Axios from 'axios';
 import api from '../../api'
-import ReadStory from './ReadStory'
+import ReadStory from './ReadStory';
+import { SERVER_URL } from '../../config'
 
 export default class Home extends Component {
 
@@ -11,8 +12,8 @@ export default class Home extends Component {
     console.log(api.isLoggedIn())
     console.log(api.getLocalStorageUser())
 
-    Axios.get('http://localhost:5000/api/whatever',).then(res=>{
-      console.log(res, 'should see this')
+    Axios.get(`${SERVER_URL}/whatever`).then(res=>{
+      console.log("PLEASE GOD DISPLAY THIS", res)
     })
 
   }
