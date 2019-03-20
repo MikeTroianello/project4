@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import api from '../../api';
+import { SERVER_URL } from '../../config'
 
 export default class Login extends Component {
   constructor(props) {

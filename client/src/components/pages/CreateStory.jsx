@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import api from '../../api';
 import Axios from 'axios';
+import { SERVER_URL } from '../../config'
 
 
 export default class CreateStory extends Component {
@@ -34,7 +35,7 @@ export default class CreateStory extends Component {
       pageNumber:1,
       idOfLastPage: null
     }
-    Axios.post('http://localhost:5000/api/createstory', storyToSave).then(res=>{
+    Axios.post(`${SERVER_URL}/createstory`, storyToSave).then(res=>{
       console.log('post successful',res.data)
 
       console.log(this)

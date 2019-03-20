@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import Axios from 'axios';
 import api from '../../api'
 import CreateStory from './CreateStory';
+import { SERVER_URL } from '../../config'
 
 export default class ReadStory extends Component {
   constructor(props){
@@ -14,7 +15,7 @@ export default class ReadStory extends Component {
   }
 
   componentDidMount(){
-    Axios.get("http://localhost:5000/api/getStories").then(storiesFromServer => {
+    Axios.get(`${SERVER_URL}/getStories`).then(storiesFromServer => {
       console.log('all stories',storiesFromServer)
       this.setState({stories:storiesFromServer.data.stories})
     })

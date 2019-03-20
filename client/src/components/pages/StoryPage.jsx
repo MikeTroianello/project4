@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import Axios from 'axios';
 import api from '../../api'
 import CreateStory from './CreateStory';
+import { SERVER_URL } from '../../config'
 
 export default class StoryPage extends Component{
   state ={
@@ -19,7 +20,7 @@ export default class StoryPage extends Component{
   
   componentDidMount(){
     console.log(this)
-    Axios.get(`http://localhost:5000/api/getPage/${this.props.match.params.id}`)
+    Axios.get(`${SERVER_URL}/${this.props.match.params.id}`)
       .then(specificStoryFromServer=>{
         this.setState({
           story:specificStoryFromServer.data.storyToClient
