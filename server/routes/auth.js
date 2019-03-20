@@ -3,6 +3,7 @@ const passport = require('passport')
 const router = express.Router()
 const User = require("../models/User")
 const Story = require("../models/Story")
+const { isLoggedIn } = require('../middlewares')
 
 // Bcrypt to encrypt passwords
 const bcrypt = require("bcrypt")
@@ -22,7 +23,7 @@ router.post("/signup", (req, res, next) => {
       }
       const salt = bcrypt.genSaltSync(bcryptSalt)
       const hashPass = bcrypt.hashSync(password, salt)
-      const newUser = new User({ username, password: hashPass, name })
+      const newUser = new User({ username, password: hashPass })
       return newUser.save()
     })
     .then(userSaved => {
@@ -103,10 +104,37 @@ router.get("/logout", (req, res) => {
 
 
 //CREATE NEW STORY
-router.post("/createstory", (req, res, next) => {
-  res.json({message: "https://youtu.be/UNhphyF74sA"})
+router.post("/createstory", isLoggedIn, (req, res, next) => {
+  const creatorId = req.user._id
+  // const {title, content, creatorId, idOfLastPage, teaser, pageNumber} = req.body
+  const {title, content, idOfLastPage, teaser, pageNumber} = req.body
+  if (!title || !content || !teaser) {
+    res.status().json({ message: "Please fill out ALL text boxes"})
+    return
+  }
+  Story.create()
+    .then(storyDoc => {
+      const newStory = new Story({ title, content, creatorId, idOfLastPage, teaser, pageNumber })
+       newStory.save((err,doc)=>{
+        return res.json(doc)
+       })
+    })
+    .catch(err => next(err))
+
 })
 
+router.get('/getStories', isLoggedIn, (req,res,next)=>{
+  Story.find().then(allStoriesFromDb=>{
+    console.log('all',allStoriesFromDb)
+    res.json({stories:allStoriesFromDb})
+  })
+})
+
+router.get('/getPage/:id', isLoggedIn, (req,res,next)=>{
+  Story.findById(req.params.id).then(storyFromDb=>{
+    res.json({storyToClient:storyFromDb})
+  })
+})
 
 
 

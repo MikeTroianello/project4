@@ -5,10 +5,11 @@ import CreateStory from './pages/CreateStory';
 import Login from './pages/Login';
 import Signup from './pages/Signup';
 import api from '../api';
+import ReadStory from './pages/ReadStory'
+import StoryPage from './pages/StoryPage'
 
 export default class App extends Component {
   state = {
-    countries: [],
     user: {},
   }
 
@@ -64,8 +65,14 @@ export default class App extends Component {
             path='/createstory'
             render={(props) => <CreateStory {...props} setUser={this.setUser}/>}
           />
-          
-          
+          <Route
+            path='/readstory'
+            render={(props) => <ReadStory {...props} setUser={this.setUser}/>}
+          />     
+          <Route
+            path='/story/:id'
+            render={(props) => <StoryPage {...props} setUser={this.setUser}/>}
+          />           
           <Route render={() => <h2>404</h2>} />
 
 
