@@ -20,7 +20,7 @@ export default class StoryPage extends Component{
   
   componentDidMount(){
     console.log(this)
-    Axios.get(`${SERVER_URL}/${this.props.match.params.id}`)
+    Axios.get(`${SERVER_URL}/getPage/${this.props.match.params.id}`)
       .then(specificStoryFromServer=>{
         this.setState({
           story:specificStoryFromServer.data.storyToClient
