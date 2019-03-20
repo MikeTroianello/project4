@@ -1,1 +1,1 @@
-export const SERVER_URL = process.env.NODE_ENV === 'production' ? 'https://superduperubercool.herokuapp.com/api' : 'http://localhost:5000/api'
+export const SERVER_URL = process.env.NODE_ENV === 'production' ? 'https://ironquest.herokuapp.com/api' : 'http://localhost:5000/api'
