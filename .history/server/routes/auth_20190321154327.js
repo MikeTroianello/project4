@@ -96,8 +96,6 @@ router.post('/login-with-passport-local-strategy', (req, res, next) => {
   })(req, res, next)
 })
 
-//LOGOUT
-
 router.get("/logout", (req, res) => {
   req.logout()
   res.json({ message: 'You are out!' })
@@ -127,9 +125,11 @@ router.post("/createstory", isLoggedIn, (req, res, next) => {
 })
 
 router.get('/getUser', isLoggedIn, (req, res, next)=>{
-  console.log("HELLO", req.user)
-    res.json({user:req.user})
+  const username = req.body
+  User.findById(req.params.d).then(user=>{
+    res.json({user:user})
   })
+})
 
 router.get('/getStories', isLoggedIn, (req,res,next)=>{
   Story.find().then(allStoriesFromDb=>{
@@ -139,18 +139,12 @@ router.get('/getStories', isLoggedIn, (req,res,next)=>{
 })
 
 router.get('/getPage/:id', isLoggedIn, (req,res,next)=>{
+  console.log(req)
   Story.findById(req.params.id).then(storyFromDb=>{
     res.json({storyToClient:storyFromDb})
   })
 })
 
-
-//DELETE USER
-router.post('/deleteUser', isLoggedIn, (req,res,next)=>{
-  console.log("DELETE ALMOST COMPLETE", req)
-  req.user.delete()//if this causes isses than do User.deleteById(req.user._id)
-  res.end()
-})
 
 
 module.exports = router

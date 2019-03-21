@@ -96,8 +96,6 @@ router.post('/login-with-passport-local-strategy', (req, res, next) => {
   })(req, res, next)
 })
 
-//LOGOUT
-
 router.get("/logout", (req, res) => {
   req.logout()
   res.json({ message: 'You are out!' })
@@ -144,13 +142,6 @@ router.get('/getPage/:id', isLoggedIn, (req,res,next)=>{
   })
 })
 
-
-//DELETE USER
-router.post('/deleteUser', isLoggedIn, (req,res,next)=>{
-  console.log("DELETE ALMOST COMPLETE", req)
-  req.user.delete()//if this causes isses than do User.deleteById(req.user._id)
-  res.end()
-})
 
 
 module.exports = router

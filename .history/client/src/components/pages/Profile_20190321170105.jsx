@@ -19,11 +19,8 @@ export default class Profile extends Component{
   }
 
   deleteConfirm(){
-    console.log("DELETING")
-    Axios.post(`${SERVER_URL}/deleteUser`).then(result=>{
-      window.localStorage.removeItem('user')
-      this.props.history.push('/') 
-    })}
+    console.log('DELETED')
+  }
 
 
   componentDidMount(){
@@ -37,13 +34,14 @@ export default class Profile extends Component{
    console.log(this.state.user.username)
     return(
       <div>
-      <h1>{this.state.user.username}'s profile</h1>
+      <h1>Yeet</h1>
+      <p>{this.state.user.username}'s profile</p>
       <h2>About {this.state.user.username}:</h2>
 
       <button onClick={(e) => this.deleteProfile()}>Delete Profile(!)</button>
       {this.state.show && <h1>DELETE PROFILE?!</h1>}
       {this.state.show && <h3>(This cannot be undone)</h3>}
-      {this.state.show && <button onClick={(e)=>this.deleteConfirm()}>Yes, kill it</button>}
+      {this.state.show && <button onClick={(e)=>this.deleteConfirm()}>Yes, kill it</button>
       </div>
     )
   }

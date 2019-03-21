@@ -148,8 +148,7 @@ router.get('/getPage/:id', isLoggedIn, (req,res,next)=>{
 //DELETE USER
 router.post('/deleteUser', isLoggedIn, (req,res,next)=>{
   console.log("DELETE ALMOST COMPLETE", req)
-  req.user.delete()//if this causes isses than do User.deleteById(req.user._id)
-  res.end()
+  req.user.delete()
 })
 
 

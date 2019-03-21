@@ -5,9 +5,9 @@ const userSchema = new Schema({
   username: String,
   password: String,
   about: {
-    type:String,
-    default:null
-    },
+  type:String,
+  default:null
+  }
   exp: {type: Number, default:0}
 }, {
     timestamps: {
