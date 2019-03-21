@@ -38,7 +38,7 @@ export default class CreateStory extends Component {
       console.log('post successful',res.data)
 
       console.log(this)
-      this.props.history.push(`/story/${res.data._id}`) // Redirect to the home page
+      this.props.history.push(`/story/${res.data._id}`)
       window.location.reload()
       //window.location.reload(`/story/${res.data._id}`);
     })
