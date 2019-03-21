@@ -4,6 +4,8 @@ import api from '../../api'
 import CreateStory from './CreateStory';
 import { SERVER_URL } from '../../config'
 
+//THIS PAGE RENDERS THE CURRENT PAGE OF THE STORY
+
 export default class StoryPage extends Component{
   state ={
     message:null,

@@ -4,6 +4,8 @@ import api from '../../api'
 import CreateStory from './CreateStory';
 import { SERVER_URL } from '../../config'
 
+//THIS IS WHERE YOU CHOOSE THE BEGINNING OF YOUR STORY
+
 export default class ReadStory extends Component {
   constructor(props){
     super(props)
@@ -47,6 +49,7 @@ export default class ReadStory extends Component {
 
           <button onClick={(e) => this.openPanel()}>New Story</button>
           {this.state.show && <CreateStory {...this.props}/>}
+          <h3>(Note: for the sake of the demo, please do not create a new story, just add onto the existing one.</h3>
         </div>
       )
     }

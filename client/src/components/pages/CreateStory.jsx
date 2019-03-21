@@ -3,6 +3,7 @@ import api from '../../api';
 import Axios from 'axios';
 import { SERVER_URL } from '../../config'
 
+//THIS PAGE IS CALLED TO CREATE NEW STORIES. SHOULD NOT SHOW UP ON ITS OWN
 
 export default class CreateStory extends Component {
   constructor(props) {
@@ -39,8 +40,9 @@ export default class CreateStory extends Component {
       console.log('post successful',res.data)
 
       console.log(this)
-      //this.props.history.push("/readstory") // Redirect to the home page
-      window.location.reload();
+      this.props.history.push(`/story/${res.data._id}`) // Redirect to the home page
+      window.location.reload()
+      //window.location.reload(`/story/${res.data._id}`);
     })
   }
   render(){
@@ -52,7 +54,7 @@ export default class CreateStory extends Component {
         <form onSubmit={this.handleSubmit}>
           Enter your Story Title: <input 
             type="text" 
-            maxlength="40" 
+            maxLength="40" 
             value={this.state.title} 
             name="title" 
             placeholder="Character length: 40" 
@@ -61,7 +63,7 @@ export default class CreateStory extends Component {
           Tell us your Story: <textarea 
             rows="6" 
             cols="50" 
-            maxlength="500" 
+            maxLength="500" 
             value={this.state.content} 
             name="content" 
             placeholder="Character length: 500" 
@@ -69,7 +71,7 @@ export default class CreateStory extends Component {
             /> <br></br>
           Put the teaser for this route: <input 
             type="text" 
-            maxlength="25" 
+            maxLength="25" 
             value={this.state.teaser} 
             name="teaser" 
             placeholder="Character length: 25" 
