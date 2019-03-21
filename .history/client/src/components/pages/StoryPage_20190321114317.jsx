@@ -25,7 +25,6 @@ export default class StoryPage extends Component{
     console.log(this)
     Axios.get(`${SERVER_URL}/getPage/${this.props.match.params.id}`)
       .then(specificStoryFromServer=>{
-        console.log(specificStoryFromServer)
         this.setState({
           story:specificStoryFromServer.data.storyToClient
         })
@@ -38,7 +37,7 @@ export default class StoryPage extends Component{
     //const currentStory= {...this.state.story}
     return(
     <div>
-      <h2>Page {this.state.story.pageNumber}</h2><br></br>
+      <h2>Page {this.state.story.pageNumber} here</h2><br></br>
       <h1>{this.state.story.title}</h1>
       <p>{this.state.story.content}<br></br>
       <h3>What will you do next?</h3>

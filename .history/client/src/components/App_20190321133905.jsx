@@ -7,7 +7,6 @@ import Signup from './pages/Signup';
 import api from '../api';
 import ReadStory from './pages/ReadStory'
 import StoryPage from './pages/StoryPage'
-import Profile from './pages/Profile'
 
 export default class App extends Component {
   state = {
@@ -71,11 +70,7 @@ export default class App extends Component {
           <Route
             path='/readstory'
             render={(props) => <ReadStory {...props} setUser={this.setUser}/>}
-          />    
-          <Route
-            path='/profile'
-            render={(props) => <Profile {...props} setUser={this.setUser}/>}
-          />  
+          />     
           <Route
             path='/story/:id'
             render={(props) => <StoryPage {...props} setUser={this.setUser}/>}

@@ -106,6 +106,8 @@ router.get("/logout", (req, res) => {
 //CREATE NEW STORY
 router.post("/createstory", isLoggedIn, (req, res, next) => {
   const creatorId = req.user._id
+  // const pageNumber = req.story.pageNumber //NEWLY ADDED
+  // const idOfLastPage = req.story._id  //NEWLY ADDED
   const {title, content, idOfLastPage, teaser, pageNumber} = req.body
   // const {title, content, teaser} = req.body
   if (!title || !content || !teaser) {

@@ -37,8 +37,10 @@ export default class CreateStory extends Component {
     }
     Axios.post(`${SERVER_URL}/createstory`, storyToSave).then(res=>{
       console.log('post successful',res.data)
+
+      console.log(this.props._id)
       this.props.history.push(`/story/${res.data._id}`)
-      window.location.reload()
+      //window.location.reload()
       //window.location.reload(`/story/${res.data._id}`);
     })
   }

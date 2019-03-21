@@ -7,7 +7,7 @@ import Signup from './pages/Signup';
 import api from '../api';
 import ReadStory from './pages/ReadStory'
 import StoryPage from './pages/StoryPage'
-import Profile from './pages/Profile'
+// import Profile from './pages/Profile'
 
 export default class App extends Component {
   state = {
@@ -44,7 +44,7 @@ export default class App extends Component {
           {!api.isLoggedIn() && <NavLink to="/signup">Signup</NavLink>}
           {!api.isLoggedIn() && <NavLink to="/signup">Signup</NavLink>}
           {!api.isLoggedIn() && <NavLink to="/login">Login</NavLink>}
-          {api.isLoggedIn() && <NavLink to="/profile">Profile Page</NavLink>}
+          {/* {api.isLoggedIn() && <NavLink to="/profile">Profile Page</NavLink>} */}
           {api.isLoggedIn() && <Link to="/" onClick={(e) => this.handleLogoutClick(e)}>Logout</Link>}
           {/* <NavLink to="/readstory">Read a Story</NavLink> */}
         </header>
@@ -72,10 +72,10 @@ export default class App extends Component {
             path='/readstory'
             render={(props) => <ReadStory {...props} setUser={this.setUser}/>}
           />    
-          <Route
+          {/* <Route
             path='/profile'
             render={(props) => <Profile {...props} setUser={this.setUser}/>}
-          />  
+          />   */}
           <Route
             path='/story/:id'
             render={(props) => <StoryPage {...props} setUser={this.setUser}/>}

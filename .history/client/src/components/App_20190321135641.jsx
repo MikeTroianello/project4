@@ -7,7 +7,7 @@ import Signup from './pages/Signup';
 import api from '../api';
 import ReadStory from './pages/ReadStory'
 import StoryPage from './pages/StoryPage'
-import Profile from './pages/Profile'
+// import Profile from './pages/Profile'
 
 export default class App extends Component {
   state = {

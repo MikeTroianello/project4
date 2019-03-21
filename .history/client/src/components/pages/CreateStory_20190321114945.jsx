@@ -27,7 +27,7 @@ export default class CreateStory extends Component {
 
   handleSubmit = (event) => {
     event.preventDefault()
-    console.log("the event", this.props._id)
+    console.log("the event", event.target)
     let storyToSave = {
       title:event.target.title.value,
       content:event.target.content.value,
@@ -37,12 +37,16 @@ export default class CreateStory extends Component {
     }
     Axios.post(`${SERVER_URL}/createstory`, storyToSave).then(res=>{
       console.log('post successful',res.data)
+
+      console.log(this)
       this.props.history.push(`/story/${res.data._id}`)
-      window.location.reload()
+      //window.location.reload()
       //window.location.reload(`/story/${res.data._id}`);
     })
   }
   render(){
+    console.log("Find Values", this.state)
+    console.log("DID THIS WORK?", currentStory)
     return (
       <div className="CreateStory">
         <h1>Create Your Story!</h1>
