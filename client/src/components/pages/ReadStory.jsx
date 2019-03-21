@@ -18,7 +18,7 @@ export default class ReadStory extends Component {
 
   componentDidMount(){
     Axios.get(`${SERVER_URL}/getStories`).then(storiesFromServer => {
-      console.log('all stories',storiesFromServer)
+      console.log("ALL STORIES",storiesFromServer.data.stories)
       this.setState({stories:storiesFromServer.data.stories})
     })
   }
@@ -34,6 +34,7 @@ export default class ReadStory extends Component {
     return this.state.stories.map(story=>{
       return (
         <a href={`story/${story._id}`}>
+         {/* {story.pageNumber === 1 && <li>{story.title}</li> } */}
          <li>{story.title}</li>
         </a>
       )
@@ -41,6 +42,7 @@ export default class ReadStory extends Component {
   }
 
   render(){
+    console.log("DSVBASDJVBAJDSBVJSDBVJABDSV",this.props)
       return(
         <div>
           <h1>Choose your quest</h1>

@@ -12,10 +12,8 @@ export default class CreateStory extends Component {
       title: "",
       content: "",
       creatorId: "",
-      idOfLastPage: "",
       teaser: "",
       message: null,
-      pageNumber:""
     }
     this.handleInputChange = this.handleInputChange.bind(this)
   }
@@ -28,7 +26,7 @@ export default class CreateStory extends Component {
 
   handleSubmit = (event) => {
     event.preventDefault()
-    console.log(event.target.title.value, event.target.content.value)
+    console.log("the event", event.target)
     let storyToSave = {
       title:event.target.title.value,
       content:event.target.content.value,
@@ -46,7 +44,7 @@ export default class CreateStory extends Component {
     })
   }
   render(){
-    console.log(process.env)
+    console.log("Find Values", this.state.title)
 
     return (
       <div className="CreateStory">

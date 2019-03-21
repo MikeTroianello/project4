@@ -6,6 +6,7 @@ import { SERVER_URL } from '../../config'
 
 //THIS PAGE RENDERS THE CURRENT PAGE OF THE STORY
 
+
 export default class StoryPage extends Component{
   state ={
     message:null,
@@ -31,6 +32,7 @@ export default class StoryPage extends Component{
   }
 
   render(){
+    console.log("HERE I AM", this.props)
     return(
     <div>
       <h2>Page {this.state.story.pageNumber}</h2><br></br>
@@ -44,3 +46,4 @@ export default class StoryPage extends Component{
     )
   }
 }
+
