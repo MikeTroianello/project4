@@ -20,8 +20,9 @@ export default class Profile extends Component{
   }
 
   render(){
+    console.log('thisthisthis',setUser)
     return(
-      <h1>YEET</h1>
+      <h1>{this.setUser}</h1>
     )
   }
 }

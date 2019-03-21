@@ -134,6 +134,8 @@ router.get('/getStories', isLoggedIn, (req,res,next)=>{
   Story.find().then(allStoriesFromDb=>{
     console.log('all',allStoriesFromDb)
     res.json({stories:allStoriesFromDb})
+    .then(userFromDb => {
+      
   })
 })
 

@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import Axios from 'axios';
 import { SERVER_URL } from '../../config'
+// import setUser from ''
 
 export default class Profile extends Component{
   constructor(props){
@@ -12,16 +13,17 @@ export default class Profile extends Component{
   }
 
 
-  componentDidMount(){
-    Axios.get(`${SERVER_URL}/getUser`).then(userFromServer => {
-      console.log("User",userFromServer)
-      this.setState({user:userFromServer})
-    })
-  }
+  // componentDidMount(){
+  //   Axios.get(`${SERVER_URL}/getUser`).then(userFromServer => {
+  //     console.log("User",userFromServer)
+  //     this.setState({user:userFromServer})
+  //   })
+  // }
 
   render(){
+    console.log('thisthisthis',this)
     return(
-      <h1>YEET</h1>
+      <h1>{this.setUser}</h1>
     )
   }
 }

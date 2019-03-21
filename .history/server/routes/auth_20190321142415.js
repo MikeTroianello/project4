@@ -125,9 +125,7 @@ router.post("/createstory", isLoggedIn, (req, res, next) => {
 })
 
 router.get('/getUser', isLoggedIn, (req, res, next)=>{
-  User.findOne({ username }).then(user=>{
-    res.json({user:user})
-  })
+  User.findOne({ username })
 })
 
 router.get('/getStories', isLoggedIn, (req,res,next)=>{
