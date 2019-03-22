@@ -78,9 +78,8 @@ export default class Profile extends Component{
           <button type="submit">is this itSubmit</button>
         </form>
       }
-      <h4>Delete Profile</h4>
       <button onClick={(e) => this.deleteProfile()}>Delete Profile(!)</button>
-      
+      <h4>Delete Profile</h4>
       {this.state.show && <h1>DELETE PROFILE?!</h1>}
       {this.state.show && <h3>(This cannot be undone)</h3>}
       {this.state.show && <button onClick={(e)=>this.deleteConfirm()}>Yes, kill it</button>}

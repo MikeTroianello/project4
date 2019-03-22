@@ -33,8 +33,9 @@ export default class ReadStory extends Component {
   showStories = () => {
     return this.state.stories.map(story=>{
       return (
-        <a href={`story/${story._id}`}>
+        {/* <a href={`story/${story._id}`}> */}
          {story.pageNumber === 1 && <li>{story.title}</li> }
+         <li>{story.title}</li>
         </a>
       )
     })

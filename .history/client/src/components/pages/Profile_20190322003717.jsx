@@ -60,10 +60,9 @@ export default class Profile extends Component{
       <div>
       <h1>{this.state.user.username}'s profile</h1>
       <h2>About {this.state.user.username}:</h2>
-      
-      {!this.state.about || !this.state.update || <h3>You don't have anything written about you yet... {this.state.about}</h3>}
-      <h4>{this.state.user.about}</h4>
       <button onClick={(e) => this.updateProfile()}>Update Profile</button><br></br>
+      {!this.state.about && !this.state.update && <h3>You don't have anything written about you yet... {this.state.about}</h3>}
+      <h4>{this.state.user.about}</h4>
       {this.state.update &&
         <form onSubmit={this.updateAbout}>
           <textarea 
@@ -78,9 +77,7 @@ export default class Profile extends Component{
           <button type="submit">is this itSubmit</button>
         </form>
       }
-      <h4>Delete Profile</h4>
       <button onClick={(e) => this.deleteProfile()}>Delete Profile(!)</button>
-      
       {this.state.show && <h1>DELETE PROFILE?!</h1>}
       {this.state.show && <h3>(This cannot be undone)</h3>}
       {this.state.show && <button onClick={(e)=>this.deleteConfirm()}>Yes, kill it</button>}

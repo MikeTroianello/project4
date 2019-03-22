@@ -35,6 +35,7 @@ export default class ReadStory extends Component {
       return (
         <a href={`story/${story._id}`}>
          {story.pageNumber === 1 && <li>{story.title}</li> }
+         <li>{story.title}</li>
         </a>
       )
     })
