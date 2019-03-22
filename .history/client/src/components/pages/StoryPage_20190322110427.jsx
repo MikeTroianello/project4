@@ -30,7 +30,7 @@ export default class StoryPage extends Component{
   }
   showNextStories = () => {
     return this.state.stories.map(story=>{
-      return <li><a href={`/story/${story._id}`}>{story.teaser}</a></li>
+      return <a href={`/story/${story._id}`}>{story.teaser}</a>
     })
   }
 
@@ -54,8 +54,8 @@ export default class StoryPage extends Component{
     console.log("HERE I AM", this.state.story)
     //const currentStory= {...this.state.story}
     return(
-    <div className="storyPage">
-      <h3>Page {this.state.story.pageNumber}</h3>
+    <div>
+      <h2>Page {this.state.story.pageNumber}</h2><br></br>
       <h1>{this.state.story.title}</h1>
       <p>{this.state.story.content}<br></br>
       <h3>What will you do next?</h3>

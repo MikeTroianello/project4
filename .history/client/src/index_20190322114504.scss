@@ -19,7 +19,11 @@ $primary: #454647;
 
 // --------------------
 // Style reusable for all components
-
+body {
+  margin: 0;
+  padding: 0;
+  font-family: sans-serif;
+}
 
 .info {
   margin: 20px;
@@ -46,7 +50,7 @@ $primary: #454647;
 
   .App-header {
     background-image: url('./images/brick-wall.jpg');
-    padding: 2px 20px 0;
+    padding: 10px 20px;
     color: white;
 
     a {
@@ -99,31 +103,4 @@ $primary: #454647;
 .storyText{
     height:200px;
     font-size:14pt;
-}
-
-// -------------------
-//CARD STYLE FOR THE WORDS
-
-.CreateStory{
-  margin: 50px 300px;
-  border-style: solid;
-  // background-image: url('./images/parchment.jpg')
-  background-color: beige;
-}
-
-body {
-  margin: 0;
-  padding: 0;
-  font-family: sans-serif;
-  background-color: beige;
-  background-image: url('./images/parchment.jpg')
-}
-
-// .storyPage{
-//   border-style: solid;
-//   margin: 20px 350px;
-// }
-
-li{
- list-style-type: none;
 }

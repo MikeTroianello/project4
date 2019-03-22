@@ -43,7 +43,7 @@ export default class App extends Component {
       <div className="App">
         <header className="App-header">
          <img src={logoWhite} alt="Thanks Haley!" height="130" width="auto" />
-          {api.isLoggedIn() && <p>Hello, {this.state.user.username}!</p>}
+          {api.isLoggedIn() && <h4>Hello, {this.state.user.username}!</h4>}
           {!api.isLoggedIn() && <h3>You are not logged in</h3>}
           <NavLink to="/" exact>Home</NavLink>
           {!api.isLoggedIn() && <NavLink to="/signup">Signup</NavLink>}

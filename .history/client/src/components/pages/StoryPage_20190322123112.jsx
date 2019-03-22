@@ -54,8 +54,8 @@ export default class StoryPage extends Component{
     console.log("HERE I AM", this.state.story)
     //const currentStory= {...this.state.story}
     return(
-    <div className="storyPage">
-      <h3>Page {this.state.story.pageNumber}</h3>
+    <div>
+      <h3>Page {this.state.story.pageNumber}</h3><br></br>
       <h1>{this.state.story.title}</h1>
       <p>{this.state.story.content}<br></br>
       <h3>What will you do next?</h3>

@@ -61,7 +61,7 @@ export default class CreateStory extends Component {
             maxLength="500" 
             value={this.state.content} 
             name="content" 
-            placeholder="Put your story content here. Character length: 500" 
+            placeholder="Character length: 500" 
             onChange={this.handleInputChange} 
             /> <br></br>
           Put the teaser for this route: <input 
@@ -72,8 +72,8 @@ export default class CreateStory extends Component {
             placeholder="Character length: 25" 
             onChange={this.handleInputChange} 
             /> <br></br>
-            <h4>(The teaser is the link that will lead readers to this page you are creating.)<br></br>
-           (e.g. if your story is about goint to a city, the teaser could be "go to the city")</h4>
+            <h4>(The teaser is the link that will lead readers to this page you are creating.)</h4><br></br>
+            <h4>(e.g. if your story is about goint to a city, the teaser could be "go to the city")</h4>
           {/* <button onClick={(e) => this.handleClick}>Let's get creatin'!</button> */}
           <button>Let's get creatin'!</button>
           

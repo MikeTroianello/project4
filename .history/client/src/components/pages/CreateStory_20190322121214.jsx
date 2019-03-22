@@ -61,7 +61,7 @@ export default class CreateStory extends Component {
             maxLength="500" 
             value={this.state.content} 
             name="content" 
-            placeholder="Put your story content here. Character length: 500" 
+            placeholder="Character length: 500" 
             onChange={this.handleInputChange} 
             /> <br></br>
           Put the teaser for this route: <input 

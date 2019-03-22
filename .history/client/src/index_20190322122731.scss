@@ -19,7 +19,12 @@ $primary: #454647;
 
 // --------------------
 // Style reusable for all components
-
+body {
+  margin: 0;
+  padding: 0;
+  font-family: sans-serif;
+  background-color: beige;
+}
 
 .info {
   margin: 20px;
@@ -105,25 +110,7 @@ $primary: #454647;
 //CARD STYLE FOR THE WORDS
 
 .CreateStory{
-  margin: 50px 300px;
+  margin: 100px 300px;
   border-style: solid;
-  // background-image: url('./images/parchment.jpg')
-  background-color: beige;
-}
-
-body {
-  margin: 0;
-  padding: 0;
-  font-family: sans-serif;
-  background-color: beige;
-  background-image: url('./images/parchment.jpg')
-}
-
-// .storyPage{
-//   border-style: solid;
-//   margin: 20px 350px;
-// }
-
-li{
- list-style-type: none;
+  background-image: url('/client/src/images/parchment.jpg')
 }
