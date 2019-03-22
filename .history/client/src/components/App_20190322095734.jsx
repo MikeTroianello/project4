@@ -8,9 +8,9 @@ import api from '../api';
 import ReadStory from './pages/ReadStory';
 import StoryPage from './pages/StoryPage';
 import Profile from './pages/Profile';
-const logoBlue =require('../images/Ironquest-blue.png')
-const logoBlack =require('../images/Ironquest-Black.png')
-const logoWhite =require('../images/Ironquest-White.png')
+const logoBlue =require('../images/Ironquest-blue.png.png')
+const logoBlack =require('../images/Ironquest-Black.png.png')
+const logoWhite =require('../images/Ironquest-White.png.png')
 
 
 export default class App extends Component {
@@ -42,7 +42,7 @@ export default class App extends Component {
     return (
       <div className="App">
         <header className="App-header">
-         <img src={logoWhite} alt="Thanks Haley!" height="140" width="auto" />
+         <img src={logo}/>
           {api.isLoggedIn() && <h3>Hello, {this.state.user.username}!</h3>}
           <NavLink to="/" exact>Home</NavLink>
           {!api.isLoggedIn() && <NavLink to="/signup">Signup</NavLink>}
