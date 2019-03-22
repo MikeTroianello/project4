@@ -21,17 +21,12 @@ export default class StoryPage extends Component{
       })
   }
 
-  filterNextStories = (stories) => {
+  showNextStories = (stories) => {
     let showNextStories = stories.filter(story=>{
       return story.idOfLastPage === this.props.match.params.id
     })
     console.log(showNextStories)
     return showNextStories;
-  }
-  showNextStories = () => {
-    return this.state.stories.map(story=>{
-      return <a href={`/story/${story._id}`}>{story.teaser}</a>
-    })
   }
 
   componentDidMount(){
@@ -46,7 +41,7 @@ export default class StoryPage extends Component{
       Axios.get(`${SERVER_URL}/getStories`).then(storiesFromServer => {
         console.log("ALL STORIES",storiesFromServer.data.stories)
 
-        this.setState({stories:this.filterNextStories(storiesFromServer.data.stories)})
+        this.setState({stories:this.showNextStories(storiesFromServer.data.stories)})
       })
   }
 
@@ -60,7 +55,7 @@ export default class StoryPage extends Component{
       <p>{this.state.story.content}<br></br>
       <h3>What will you do next?</h3>
 
-      <h2>{this.showNextStories()}</h2>
+
 
       {!this.state.show && <button onClick={(e) => this.openPanel()}>Create a new Path!</button>}
           {this.state.show && <CreateStory {...this.props} {...this.state.story}/>}

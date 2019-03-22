@@ -155,10 +155,7 @@ router.post('/deleteUser', isLoggedIn, (req,res,next)=>{
 router.post('/updateUser', isLoggedIn, (req,res,next)=>{
   console.log("ATTEMPTING TO UPDATE", req.body)
   const {update} = req.body
-  User.findById(req.user._id).then(user=>{
-    user.about = update;
-    user.save((err,doc)=>{res.json({saved:doc})})
-  })
+  
 })
 
 

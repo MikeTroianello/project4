@@ -60,7 +60,7 @@ export default class StoryPage extends Component{
       <p>{this.state.story.content}<br></br>
       <h3>What will you do next?</h3>
 
-      <h2>{this.showNextStories()}</h2>
+
 
       {!this.state.show && <button onClick={(e) => this.openPanel()}>Create a new Path!</button>}
           {this.state.show && <CreateStory {...this.props} {...this.state.story}/>}

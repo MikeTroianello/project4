@@ -8,7 +8,7 @@ export default class Profile extends Component{
     this.state={
       user:{},
       show:false,
-      update:false,
+      update:false
     }
   }
 
@@ -44,14 +44,12 @@ export default class Profile extends Component{
     console.log(userUpdate)
     //debugger;
     Axios.post(`${SERVER_URL}/updateUser`, userUpdate).then(result=>{
-       window.location.reload()
-      //this.setState({about:userUpdate.update})
+      // window.location.reload()
     })}
 
   componentDidMount(){
     Axios.get(`${SERVER_URL}/getUser`).then(userFromServer => {
       this.setState({user:userFromServer.data.user})
-      ///window.location.reload()
     })
   }
 
@@ -62,7 +60,7 @@ export default class Profile extends Component{
       <h1>{this.state.user.username}'s profile</h1>
       <h2>About {this.state.user.username}:</h2>
       <button onClick={(e) => this.updateProfile()}>Update Profile</button><br></br>
-      {!this.state.about && !this.state.update && <h3>You don't have anything written about you yet... {this.state.about}</h3>}
+      {!this.state.about && !this.state.update && <h3>You don't have anything written about you yet...</h3>}
       <h1>{this.state.user.about}</h1>
       {this.state.update &&
         <form onSubmit={this.updateAbout}>
@@ -70,7 +68,7 @@ export default class Profile extends Component{
               rows="4" 
               cols="50" 
               maxLength="400" 
-              defaultValue={this.state.about} 
+              value={this.state.about} 
               name="updater" 
               placeholder="Character length: 400" 
             

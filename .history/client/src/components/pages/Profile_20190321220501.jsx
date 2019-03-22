@@ -9,6 +9,7 @@ export default class Profile extends Component{
       user:{},
       show:false,
       update:false,
+      about: ''
     }
   }
 
@@ -44,14 +45,13 @@ export default class Profile extends Component{
     console.log(userUpdate)
     //debugger;
     Axios.post(`${SERVER_URL}/updateUser`, userUpdate).then(result=>{
-       window.location.reload()
-      //this.setState({about:userUpdate.update})
+      // window.location.reload()
+      this.setState({about:userUpdate.update})
     })}
 
   componentDidMount(){
     Axios.get(`${SERVER_URL}/getUser`).then(userFromServer => {
       this.setState({user:userFromServer.data.user})
-      ///window.location.reload()
     })
   }
 
@@ -70,7 +70,7 @@ export default class Profile extends Component{
               rows="4" 
               cols="50" 
               maxLength="400" 
-              defaultValue={this.state.about} 
+              value={this.state.about} 
               name="updater" 
               placeholder="Character length: 400" 
             

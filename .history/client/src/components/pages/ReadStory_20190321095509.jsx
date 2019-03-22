@@ -42,6 +42,7 @@ export default class ReadStory extends Component {
   }
 
   render(){
+    console.log("DSVBASDJVBAJDSBVJSDBVJABDSV",this.props)
       return(
         <div>
           <h1>Choose your quest</h1>

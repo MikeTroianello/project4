@@ -44,14 +44,13 @@ export default class Profile extends Component{
     console.log(userUpdate)
     //debugger;
     Axios.post(`${SERVER_URL}/updateUser`, userUpdate).then(result=>{
-       window.location.reload()
+      // window.location.reload()
       //this.setState({about:userUpdate.update})
     })}
 
   componentDidMount(){
     Axios.get(`${SERVER_URL}/getUser`).then(userFromServer => {
       this.setState({user:userFromServer.data.user})
-      ///window.location.reload()
     })
   }
 
