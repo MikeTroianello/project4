@@ -57,7 +57,7 @@ export default class Profile extends Component{
   render(){
    console.log(this.state.update)
     return(
-      <div className="profile">
+      <div className="center-box">
       <h1>{this.state.user.username}'s profile</h1>
       <h2>About {this.state.user.username}:</h2>
       

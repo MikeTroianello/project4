@@ -128,10 +128,12 @@ li{
  list-style-type: none;
 }
 
-.profile{
+.center-box{
   text-align: center;
-  width: 40vw;
-  margin-left: 30vw;
+  background-color: rgba(0, 0, 0, 0.85);
+  width: 30vw;
+  margin-left: 35vw;
   position: absolute;
-  font-size: 20px;
+  top: 20%;
+  color: white;
 }
