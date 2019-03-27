@@ -54,7 +54,7 @@ export default class StoryPage extends Component{
     return(
     <div className="storyPage">
 
-      <h2>Page {this.state.story.pageNumber}</h2>
+      <h2 className='bottomBorder'>Page {this.state.story.pageNumber}</h2>
       <div className='pageBorder'>
         <h1>{this.state.story.title}</h1>
         <p>{this.state.story.content}<br></br></p>
