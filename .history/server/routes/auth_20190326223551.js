@@ -153,7 +153,6 @@ router.post('/deleteUser', isLoggedIn, (req,res,next)=>{
 
 //UPDATE USER
 router.post('/updateUser', isLoggedIn, (req,res,next)=>{
-  console.log("ATTEMPTING TO UPDATE", req.body)
   const {update} = req.body
   User.findById(req.user._id).then(user=>{
     user.about = update;
@@ -162,9 +161,8 @@ router.post('/updateUser', isLoggedIn, (req,res,next)=>{
 })
 
 //ABOUT PAGE
-// router.get('/about' (req,res,next)=>{
-//   console.log("GOING TO ABOUT")
-
-// })
+router.get('/about' (req,res,next)=>{
+  console.log("GOING TO ABOUT")
+})
 
 module.exports = router

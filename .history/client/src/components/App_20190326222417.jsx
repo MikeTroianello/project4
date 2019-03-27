@@ -8,7 +8,7 @@ import api from '../api';
 import ReadStory from './pages/ReadStory';
 import StoryPage from './pages/StoryPage';
 import Profile from './pages/Profile';
-import About from './pages/About';
+import About from './pages/About.jsx';
 const logoBlue =require('../images/Ironquest-blue.png')
 const logoBlack =require('../images/Ironquest-Black.png')
 const logoWhite =require('../images/Ironquest-White.png')
@@ -88,8 +88,8 @@ export default class App extends Component {
           />           
           <Route
             path='/about'
-            render={(props) => <About {...props} setUser={this.setUser}/>}
-          />     
+            render={{props} => <About {...props} setUser={this.setUser}/>}
+          />
           <Route render={() => <h2>404</h2>} />
 
 

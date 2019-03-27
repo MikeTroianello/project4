@@ -8,7 +8,7 @@ import api from '../api';
 import ReadStory from './pages/ReadStory';
 import StoryPage from './pages/StoryPage';
 import Profile from './pages/Profile';
-import About from './pages/About';
+import About from './pages/About.jsx';
 const logoBlue =require('../images/Ironquest-blue.png')
 const logoBlack =require('../images/Ironquest-Black.png')
 const logoWhite =require('../images/Ironquest-White.png')
@@ -47,7 +47,6 @@ export default class App extends Component {
           {api.isLoggedIn() && <p>Hello, {this.state.user.username}!</p>}
           {!api.isLoggedIn() && <h3>You are not logged in</h3>}
           <NavLink to="/" exact>Home</NavLink>
-          <NavLink to='/about'>About</NavLink>
           {!api.isLoggedIn() && <NavLink to="/signup">Signup</NavLink>}
           {!api.isLoggedIn() && <NavLink to="/login">Login</NavLink>}
           {api.isLoggedIn() && <NavLink to="/profile">Profile</NavLink>}
@@ -86,10 +85,6 @@ export default class App extends Component {
             path='/story/:id'
             render={(props) => <StoryPage {...props} setUser={this.setUser}/>}
           />           
-          <Route
-            path='/about'
-            render={(props) => <About {...props} setUser={this.setUser}/>}
-          />     
           <Route render={() => <h2>404</h2>} />
 
 

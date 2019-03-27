@@ -26,7 +26,6 @@ export default class Home extends Component {
         
         {!api.isLoggedIn() && <p><a href="Signup">Create an account</a> or <a href="Login">Log in</a> to start playing!</p>}
         {api.isLoggedIn() && <p><a href="readstory">Let's Play!</a> </p>}
-        <br></br>
         <p>New to IronQuest? <a href="about">Read the About page</a></p>
       </div>
     );

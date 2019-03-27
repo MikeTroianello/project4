@@ -88,8 +88,8 @@ export default class App extends Component {
           />           
           <Route
             path='/about'
-            render={(props) => <About {...props} setUser={this.setUser}/>}
-          />     
+            render={{props} => <About {...props} setUser={this.setUser}/>}
+          />
           <Route render={() => <h2>404</h2>} />
 
 

@@ -25,8 +25,7 @@ export default class Home extends Component {
         <p>This is an interactive story in which anyone can play a part in the creation and expansion in the world.</p><br></br>
         
         {!api.isLoggedIn() && <p><a href="Signup">Create an account</a> or <a href="Login">Log in</a> to start playing!</p>}
-        {api.isLoggedIn() && <p><a href="readstory">Let's Play!</a> </p>}
-        <br></br>
+        {api.isLoggedIn() && <p><a href="readstory">Let's Play!</a> </p><br></br>}
         <p>New to IronQuest? <a href="about">Read the About page</a></p>
       </div>
     );
