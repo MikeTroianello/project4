@@ -48,6 +48,7 @@ export default class ReadStory extends Component {
 
           <button onClick={(e) => this.openPanel()}>New Story</button>
           {this.state.show && <CreateStory {...this.props}/>}
+          <h3>(Note: for the sake of the demo, please do not create a new story, just add onto the existing one.</h3>
         </div>
       )
     }

@@ -117,6 +117,7 @@ router.post("/createstory", isLoggedIn, (req, res, next) => {
     .then(storyDoc => {
       const newStory = new Story({ title, content, creatorId, idOfLastPage, teaser, pageNumber })
        newStory.save((err,doc)=>{
+         console.log("THE DOC",doc)
         return res.json(doc)
        })
     })

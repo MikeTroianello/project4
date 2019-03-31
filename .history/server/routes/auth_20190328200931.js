@@ -109,6 +109,7 @@ router.get("/logout", (req, res) => {
 router.post("/createstory", isLoggedIn, (req, res, next) => {
   const creatorId = req.user._id
   const {title, content, idOfLastPage, teaser, pageNumber} = req.body
+  // const {title, content, teaser} = req.body
   if (!title || !content || !teaser) {
     res.status().json({ message: "Please fill out ALL text boxes"})
     return
@@ -117,6 +118,7 @@ router.post("/createstory", isLoggedIn, (req, res, next) => {
     .then(storyDoc => {
       const newStory = new Story({ title, content, creatorId, idOfLastPage, teaser, pageNumber })
        newStory.save((err,doc)=>{
+         console.log("THE DOC",doc)
         return res.json(doc)
        })
     })

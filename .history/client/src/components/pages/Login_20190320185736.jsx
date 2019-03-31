@@ -2,9 +2,7 @@ import React, { Component } from 'react';
 import api from '../../api';
 import { SERVER_URL } from '../../config'
 
-//THIS IS THE SIGNUP PAGE
-
-export default class Signup extends Component {
+export default class Login extends Component {
   constructor(props) {
     super(props)
     this.state = {
@@ -23,13 +21,10 @@ export default class Signup extends Component {
 
   handleClick(e) {
     e.preventDefault()
-    let data = {
-      username: this.state.username,
-      password: this.state.password,
-    }
-    api.signup(data)
+    api.login(this.state.username, this.state.password)
       .then(result => {
-        console.log('SUCCESS!')
+        // console.log(api.getLocalStorageUser())
+        this.setState({user:api.getLocalStorageUser()})
         this.props.setUser()
         this.props.history.push("/") // Redirect to the home page
       })
@@ -37,18 +32,19 @@ export default class Signup extends Component {
   }
 
   render() {
+    console.log()
     return (
-      <div className="Signup">
-        <h2>Create a Character!</h2>
+      <div className="Login">
+        <h2>Login</h2>
         <form>
           Username: <input type="text" value={this.state.username} name="username" onChange={this.handleInputChange} /> <br />
           Password: <input type="password" value={this.state.password} name="password" onChange={this.handleInputChange} /> <br />
-          <button onClick={(e) => this.handleClick(e)}>Signup</button>
+          <button onClick={(e) => this.handleClick(e)}>Login</button>
         </form>
         {this.state.message && <div className="info info-danger">
           {this.state.message}
         </div>}
-        <p>Already have an account? <a href="Login">Log In</a></p>
+        <p>Don't have an account? <a href="Signup">Create one now</a></p>
       </div>
     );
   }

@@ -19,6 +19,10 @@ export default class CreateStory extends Component {
     this.handleInputChange = this.handleInputChange.bind(this)
   }
 
+  if(this.props.pageNumber===null){
+    this.props.pageNumber=1
+  }
+
   handleInputChange(event) {
     this.setState({
       [event.target.name]: event.target.value

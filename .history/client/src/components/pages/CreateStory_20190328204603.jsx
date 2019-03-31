@@ -31,7 +31,7 @@ export default class CreateStory extends Component {
       title:event.target.title.value,
       content:event.target.content.value,
       teaser:event.target.teaser.value,
-      pageNumber:Number(this.props.pageNumber)+1,
+      pageNumber:(Number(this.props.pageNumber)+1),
       idOfLastPage: this.props._id
     }
     Axios.post(`${SERVER_URL}/createstory`, storyToSave).then(res=>{

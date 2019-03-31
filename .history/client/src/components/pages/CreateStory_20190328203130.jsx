@@ -27,6 +27,15 @@ export default class CreateStory extends Component {
 
   handleSubmit = (event) => {
     event.preventDefault()
+    if (this.props.pageNumber===null){
+      let storyToSave = {
+        title:event.target.title.value,
+        content:event.target.content.value,
+        teaser:event.target.teaser.value,
+        pageNumber:1,
+        idOfLastPage: this.props._id
+      }
+    }
     let storyToSave = {
       title:event.target.title.value,
       content:event.target.content.value,

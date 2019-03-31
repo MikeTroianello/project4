@@ -2,8 +2,6 @@ import React, { Component } from 'react';
 import api from '../../api';
 import { SERVER_URL } from '../../config'
 
-//THIS IS THE SIGNUP PAGE
-
 export default class Signup extends Component {
   constructor(props) {
     super(props)
