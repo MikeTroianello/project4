@@ -116,7 +116,7 @@ router.post("/createstory", isLoggedIn, (req, res, next) => {
   Story.create()
     .then(storyDoc => {
       if(pageNumber===null){
-        pageNumber=1
+        pageNumber++
       }
       const newStory = new Story({ title, content, creatorId, idOfLastPage, teaser, pageNumber })
        newStory.save((err,doc)=>{
