@@ -4,7 +4,7 @@ const Schema = mongoose.Schema;
 const userSchema = new Schema({
   username: String,
   password: String,
-  pagesCreated: {type: Number, default:0},
+  pagesCreated: Number,
   about: {
     type:String,
     default:null

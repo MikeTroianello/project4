@@ -12,13 +12,13 @@ export default class ReadStory extends Component {
     this.state={
       show: false,
       stories: []
-
     }
   //this.handleInputChange = this.handleInputChange.bind(this);
   }
 
   componentDidMount(){
     Axios.get(`${SERVER_URL}/getStories`).then(storiesFromServer => {
+      console.log("ALL STORIES",storiesFromServer.data.stories)
       this.setState({stories:storiesFromServer.data.stories})
     })
   }
