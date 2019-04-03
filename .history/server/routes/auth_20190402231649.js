@@ -108,8 +108,7 @@ router.get("/logout", (req, res) => {
 //CREATE NEW STORY
 router.post("/createstory", isLoggedIn, (req, res, next) => {
   const creatorId = req.user._id
-  const pageNumber = req.body.pageNumber+1
-  const {title, content, idOfLastPage, teaser} = req.body
+  const {title, content, idOfLastPage, teaser, pageNumber} = req.body
   if (!title || !content || !teaser) {
     res.status(400).json({ message: "Please fill out ALL text boxes"})
     return
