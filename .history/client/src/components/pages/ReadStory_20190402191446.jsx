@@ -41,10 +41,9 @@ export default class ReadStory extends Component {
 
   render(){
       return(
-        <div className='storyPage'>
-          <div className="left-side-button">
+        <div>
+          <div>
             <a href='/home'>Back</a>
-          </div>
           <div>
             <h1>Choose your quest</h1>
             

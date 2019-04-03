@@ -41,7 +41,7 @@ export default class ReadStory extends Component {
 
   render(){
       return(
-        <div className='storyPage'>
+        <div>
           <div className="left-side-button">
             <a href='/home'>Back</a>
           </div>
