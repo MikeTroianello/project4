@@ -120,9 +120,7 @@ router.post("/createstory", isLoggedIn, (req, res, next) => {
   Story.create()
     .then(storyDoc => {
       const newStory = new Story({ title, content, creatorId, idOfLastPage, teaser, pageNumber })
-      // if(pageNumber===null){
-      //   pageNumber ++
-      // }
+      if(pageNumber)
        newStory.save((err,doc)=>{
         return res.json(doc)
        })
