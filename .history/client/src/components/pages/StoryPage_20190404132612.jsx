@@ -36,8 +36,7 @@ export default class StoryPage extends Component{
 
   componentDidMount(){
     console.log("this ", this)
-    console.log(this.t)
-    console.log(this.t.state)
+    console.log(this.state)
     console.log(this.t.state.story)
     Axios.get(`${SERVER_URL}/getPage/${this.props.match.params.id}`)
       .then(specificStoryFromServer=>{
