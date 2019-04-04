@@ -16,6 +16,7 @@ export default class StoryPage extends Component{
   }
 
   openPanel(){
+    console.log("BUTTON CLICKED")
       this.setState({
         show: true
       })
