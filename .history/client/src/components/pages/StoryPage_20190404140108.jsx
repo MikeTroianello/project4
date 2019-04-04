@@ -56,7 +56,6 @@ export default class StoryPage extends Component{
   }
 
   render(){
-    console.log(this.state)
     return(
     <div className="storyPage">
     <button onClick={this.props.history.goBack}>Back</button>
