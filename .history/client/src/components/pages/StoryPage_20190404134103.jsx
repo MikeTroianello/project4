@@ -34,21 +34,17 @@ export default class StoryPage extends Component{
     })
   }
 
-  componentWillMount(){
-    Axios.get(`${SERVER_URL}/getPage/${this.props.match.params.id}`)
-    .then(specificStoryFromServer=>{
-      this.setState({
-        story:specificStoryFromServer.data.storyToClient
-      })
-    })
-    Axios.get(`${SERVER_URL}/getStories`).then(storiesFromServer => {
-      this.setState({stories:this.filterNextStories(storiesFromServer.data.stories)})
-    })
-  }
-
   componentDidMount(){
     console.log("this ", this)
-    
+    Axios.get(`${SERVER_URL}/getPage/${this.props.match.params.id}`)
+      .then(specificStoryFromServer=>{
+        this.setState({
+          story:specificStoryFromServer.data.storyToClient
+        })
+      })
+      Axios.get(`${SERVER_URL}/getStories`).then(storiesFromServer => {
+        this.setState({stories:this.filterNextStories(storiesFromServer.data.stories)})
+      })
       //NEWLY ADDED
       Axios.get(`${SERVER_URL}/view-profile/${this.state.story.creatorId}`).then(userNameFromServer=>{
         this.setState({creator:userNameFromServer.data.viewProfile})
