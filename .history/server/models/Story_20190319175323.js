@@ -5,7 +5,6 @@ const storySchema = new Schema({
   title: String,
   content: String,
   creatorId: String,
-  creatorName:String,
   idOfLastPage: String,
   teaser: String,
   startingPage: {
