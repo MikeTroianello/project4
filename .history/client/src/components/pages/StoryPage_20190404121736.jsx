@@ -12,7 +12,7 @@ export default class StoryPage extends Component{
     message:null,
     story:{},
     stories:[],
-    creator: ""
+    creator:""
   }
 
   openPanel(){
@@ -36,7 +36,6 @@ export default class StoryPage extends Component{
   }
 
   componentDidMount(){
-    console.log(this.props.match.params)
     Axios.get(`${SERVER_URL}/getPage/${this.props.match.params.id}`)
       .then(specificStoryFromServer=>{
         this.setState({
@@ -46,20 +45,14 @@ export default class StoryPage extends Component{
       Axios.get(`${SERVER_URL}/getStories`).then(storiesFromServer => {
         this.setState({stories:this.filterNextStories(storiesFromServer.data.stories)})
       })
-      //NEWLY ADDED
-      Axios.get(`${SERVER_URL}/view-profile/${this.props.match.params.creatorId}`).then(userNameFromServer=>{
-        this.setState({creator:userNameFromServer})
-      })
+      Axios.get(`${SERVER_URL}/view-profile/${this.props})
   }
 
   render(){
     return(
     <div className="storyPage">
     <button onClick={this.props.history.goBack}>Back</button>
-    <h5>Created by {this.state.creator}</h5>
-
       <h2>Page {this.state.story.pageNumber}</h2>
-      
       <div className='pageBorder'>
         <h1>{this.state.story.title}</h1>
         <p>{this.state.story.content}<br></br></p>

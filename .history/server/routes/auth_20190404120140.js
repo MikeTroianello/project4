@@ -135,7 +135,6 @@ router.get('/getUser', isLoggedIn, (req, res, next)=>{
 router.get('/view-profile/:id', isLoggedIn, (req,res,next)=>{
   User.findById(req.params.id).then(userPulled=>{
     res.json({viewProfile:userPulled})
-    res.render('/View-Profile')
   })
 })
 

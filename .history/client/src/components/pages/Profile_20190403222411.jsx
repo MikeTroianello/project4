@@ -88,3 +88,6 @@ export default class Profile extends Component{
     )
   }
 }
+
+
+// onChange={this.handleInputChange} 

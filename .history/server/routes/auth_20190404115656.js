@@ -133,10 +133,7 @@ router.get('/getUser', isLoggedIn, (req, res, next)=>{
 
 //SEE OTHERS' PROFILES
 router.get('/view-profile/:id', isLoggedIn, (req,res,next)=>{
-  User.findById(req.params.id).then(userPulled=>{
-    res.json({viewProfile:userPulled})
-    res.render('/View-Profile')
-  })
+  User.findById(req.)
 })
 
 router.get('/getStories', isLoggedIn, (req,res,next)=>{
