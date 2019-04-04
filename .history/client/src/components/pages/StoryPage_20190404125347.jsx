@@ -35,12 +35,8 @@ export default class StoryPage extends Component{
   }
 
   componentDidMount(){
-    console.log("this.props.match.params ",this.props.match.params)
-    console.log("this.props.match ",this.props.match)
-    console.log("this.props.match.params.id ", this.props.match.params.id)
-    console.log("this.props.match.params.creatorId ",this.props.match.params.creatorId)
-    console.log("this.props ",this.props)
-    console.log("this ", this)
+    console.log(this.props.match.params)
+    console.log("match ",this.props.match)
     Axios.get(`${SERVER_URL}/getPage/${this.props.match.params.id}`)
       .then(specificStoryFromServer=>{
         this.setState({
