@@ -52,6 +52,7 @@ export default class Profile extends Component{
   componentDidMount(){
     Axios.get(`${SERVER_URL}/getUser`).then(userFromServer => {
       this.setState({user:userFromServer.data.user})
+      ///window.location.reload()
     })
   }
 
@@ -59,7 +60,6 @@ export default class Profile extends Component{
    console.log(this.state.update)
     return(
       <div className="profile">
-        <button onClick={this.props.history.goBack}>Back</button>
         <h1>{this.state.user.username}'s profile</h1>
         <h2>About {this.state.user.username}:</h2>
         
