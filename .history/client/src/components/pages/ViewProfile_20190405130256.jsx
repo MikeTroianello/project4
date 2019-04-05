@@ -5,8 +5,8 @@ import { SERVER_URL } from '../../config';
 //THIS IS FOR VIEWING OTHER PROFILES
 
 export default class ViewProfile extends Component{
-  state = {
-    user: {}
+    this.state = {
+      user: {}
   }
 
 
