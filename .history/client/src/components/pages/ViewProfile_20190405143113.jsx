@@ -28,8 +28,7 @@ export default class ViewProfile extends Component{
 
   render(){
     console.log("RENDER", this.state.user)
-    console.log("user.about[0]", this.state.user[0])
-    console.log("user.about", this.state.user.about)
+    console.log("user.about", this.state.user[0].about)
     return(
       <div className='profile'>
         <button onClick={this.props.history.goBack}>Back</button>
