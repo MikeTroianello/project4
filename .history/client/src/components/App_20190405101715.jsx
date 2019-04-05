@@ -9,7 +9,6 @@ import ReadStory from './pages/ReadStory';
 import StoryPage from './pages/StoryPage';
 import Profile from './pages/Profile';
 import About from './pages/About';
-import ViewProfile from './pages/View-Profile';
 const logoBlue =require('../images/Ironquest-blue.png')
 const logoBlack =require('../images/Ironquest-Black.png')
 const logoWhite =require('../images/Ironquest-White.png')
@@ -53,6 +52,7 @@ export default class App extends Component {
           {!api.isLoggedIn() && <NavLink to="/login">Login</NavLink>}
           {api.isLoggedIn() && <NavLink to="/profile">Profile</NavLink>}
           {api.isLoggedIn() && <Link to="/" onClick={(e) => this.handleLogoutClick(e)}>Logout</Link>}
+          {/* <NavLink to="/readstory">Read a Story</NavLink> */}
         </header>
         <Switch>
 

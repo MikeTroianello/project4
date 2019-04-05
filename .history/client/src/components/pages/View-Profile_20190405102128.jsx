@@ -15,7 +15,7 @@ export default class ViewProfile extends Component{
 
   componentDidMount(){
     Axios.get(`${SERVER_URL}/getUser/${this.state.story.creatorName}`).then(userFromServer => {
-      this.setState({user:userFromServer.data.ViewProfile})
+      this.setState({user:userFromServer.data.user})
     })
   }
 
