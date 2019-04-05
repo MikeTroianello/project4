@@ -3,7 +3,6 @@ import Axios from 'axios';
 import api from '../../api'
 import CreateStory from './CreateStory';
 import { SERVER_URL } from '../../config'
-import { Route, Link, NavLink, Switch } from 'react-router-dom';
 
 //THIS PAGE RENDERS THE CURRENT PAGE OF THE STORY
 
