@@ -11,7 +11,7 @@ export default class ViewProfile extends Component{
 
   filterUser = (ViewProfile) => {
     let trueUser = ViewProfile.filter(user=>{
-      return user.username === this.props.match.params.id
+      return user.name === this.props.match.params.id
     })
     console.log(trueUser)
     return trueUser
