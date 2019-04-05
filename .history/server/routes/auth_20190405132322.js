@@ -138,9 +138,8 @@ router.get('/view-profile/:id', isLoggedIn, (req,res,next)=>{
   // User.findById(req.id).then(userPulled=>{
     res.json({viewProfile:req.body})
     // res.render('/View-Profile')
-  }
-  // )}
-)
+  })
+})
 
 router.get('/getStories', isLoggedIn, (req,res,next)=>{
   Story.find().then(allStoriesFromDb=>{
