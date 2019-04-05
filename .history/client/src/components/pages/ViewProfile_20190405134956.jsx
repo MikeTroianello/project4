@@ -9,13 +9,6 @@ export default class ViewProfile extends Component{
     user: {}
   }
 
-  filterUser = (ViewProfile) => {
-    let trueUser = ViewProfile.filter(user=>{
-      return user.name === this.props.match.params.id
-    })
-    console.log(trueUser)
-    return trueUser
-  }
 
   componentDidMount(){
     Axios.get(`${SERVER_URL}/view-profile/${this.props.match.params.id}`).then(userFromServer => {
