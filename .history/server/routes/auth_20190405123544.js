@@ -136,7 +136,6 @@ router.get('/getUser', isLoggedIn, (req, res, next)=>{
 router.get('/view-profile/:id', isLoggedIn, (req,res,next)=>{
   console.log("FOUND IT")
   console.log(req)
-  console.log(req.params)
   const id = req.params.id
   const name = req.params.creatorName
   User.findById(id).then(userPulled=>{
