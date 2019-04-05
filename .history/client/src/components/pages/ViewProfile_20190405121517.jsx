@@ -14,8 +14,6 @@ export default class ViewProfile extends Component{
 
 
   componentDidMount(){
-    console.log(this)
-    console.log(this.props)
     Axios.get(`${SERVER_URL}/view-profile/${this.props.match.params.creatorId}`).then(userFromServer => {
       this.setState({user:userFromServer.data.ViewProfile})
     })
