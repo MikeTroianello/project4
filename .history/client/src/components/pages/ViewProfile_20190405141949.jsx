@@ -28,7 +28,6 @@ export default class ViewProfile extends Component{
 
   render(){
     console.log("RENDER", this.state.user)
-    console.log("RENDER", this.state.user[0])
     console.log("RENDER", this.state.user.about)
     return(
       <div className='profile'>
