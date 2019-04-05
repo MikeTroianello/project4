@@ -26,10 +26,10 @@ export default class ViewProfile extends Component{
     return(
       <div className='profile'>
         <button onClick={this.props.history.goBack}>Back</button>
-        {/* <h1>{this.state.user.username}'s profile</h1>
+        <h1>{this.state.user.username}'s profile</h1>
         
         {!this.state.about || !this.state.update || <h3>{this.state.user.username} hasn't filled out their profile yet. {this.state.about}</h3>}
-        <h4>{this.state.user.about}</h4> */}
+        <h4>{this.state.user.about}</h4>
 
       </div>
     )
