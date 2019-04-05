@@ -14,8 +14,10 @@ export default class ViewProfile extends Component{
     let trueUser = viewProfile.find(user=>{
       return user.username === this.props.match.params.id
     })
-    console.log(trueUser)
-    return trueUser
+    // console.log(trueUser)
+    // return trueUser
+    let mappedUser = trueUser.map()
+
   }
 
 
@@ -29,10 +31,9 @@ export default class ViewProfile extends Component{
 
 
   render(){
-    console.log(this)
     console.log("RENDER", this.state.user)
     // console.log("user[0]", this.state.user[0])
-    console.log("user.about", this.state.user.about)
+    console.log("user.about", this.state.user[0])
     // console.log("user.about", this.state.user[0].about)
     return(
       <div className='profile'>
