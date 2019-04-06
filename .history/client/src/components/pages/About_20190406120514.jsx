@@ -7,7 +7,7 @@ export default class About extends Component{
   render(){
     return (
       <div>
-        
+        {/* <button onClick={this.props.history.goBack}>Back</button> */}
         <h1>About IronQuest</h1>
         <p>IronQuest is a choose <i>and</i> create-your-own-adventure game. Each page in the story is created by a user, which can then be continued by anyone.
         <h3>How To Play</h3>
@@ -27,7 +27,7 @@ export default class About extends Component{
             <li><i>(For example, if you want your story to be about what happens when you leave a room, your teaser would be something along the lines of "Leave the Room", so the next player will know what they are choosing)</i></li>
           </ul>
           {!api.isLoggedIn() && <h2>Ready? <a href="Signup">Create an account</a> or <a href="Login">Log in</a>!</h2>}
-        {api.isLoggedIn() && <h2><a href="readstory">Now let's play!</a> or <button onClick={this.props.history.goBack}>Back</button></h2>}
+        {api.isLoggedIn() && <h2><a href="readstory">Now let's play!</a> </h2>}
         </p>
       </div>
     )}
