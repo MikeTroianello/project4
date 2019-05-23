@@ -32,9 +32,8 @@ export default class StoryPage extends Component {
   showNextStories = () => {
     return this.state.stories.map(story => {
       return (
-        //HERE
         <li>
-          <Link to={`${story._id}`}>{story.teaser}</Link>
+          <a href={`${story._id}`}>{story.teaser}</a>
         </li>
       );
     });
