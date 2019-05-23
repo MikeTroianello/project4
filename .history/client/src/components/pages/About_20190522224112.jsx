@@ -59,13 +59,13 @@ export default class About extends Component {
           </ul>
           {!api.isLoggedIn() && (
             <h2>
-              Ready? <Link to="Signup">Create an account</Link> or{" "}
-              <Link to="Login">Log in</Link>!
+              Ready? <Link to="Signup">Create an account</a> or{" "}
+              <Link to="Login">Log in</a>!
             </h2>
           )}
           {api.isLoggedIn() && (
             <h2>
-              <Link to="readstory">Now let's play!</Link>
+              <Link to="readstory">Now let's play!</a>
             </h2>
           )}
         </p>
