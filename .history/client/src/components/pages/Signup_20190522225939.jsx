@@ -64,7 +64,7 @@ export default class Signup extends Component {
           <div className="info info-danger">{this.state.message}</div>
         )}
         <p>
-          Already have an account? <Link to="Login">Log In</Link>
+          Already have an account? <a href="Login">Log In</a>
         </p>
       </div>
     );
