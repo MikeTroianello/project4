@@ -33,7 +33,7 @@ export default class StoryPage extends Component {
     return this.state.stories.map(story => {
       return (
         <li>
-          <a href={`${story._id}`}>{story.teaser}</a>
+          <Link to={`${story._id}`}>{story.teaser}</Link>
         </li>
       );
     });
@@ -61,7 +61,7 @@ export default class StoryPage extends Component {
         <button onClick={this.props.history.goBack}>Back</button>
         <h5>
           Created by{" "}
-          <Link to={`/view-profile/${this.state.story.creatorName}`}>
+          <Link href={`/view-profile/${this.state.story.creatorName}`}>
             {this.state.story.creatorName}
           </Link>
         </h5>

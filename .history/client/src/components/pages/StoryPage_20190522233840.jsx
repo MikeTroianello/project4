@@ -33,7 +33,7 @@ export default class StoryPage extends Component {
     return this.state.stories.map(story => {
       return (
         <li>
-          <a href={`${story._id}`}>{story.teaser}</a>
+          <Link to={`${story._id}`}>{story.teaser}</Link>
         </li>
       );
     });
