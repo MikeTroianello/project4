@@ -48,7 +48,7 @@ router.post('/login', (req, res, next) => {
       // "userDoc" will be empty if the username is wrong (no document in database)
       if (!userDoc) {
         // create an error object to send to our error handler with "next()"
-        next(new Error('Incorrect username'));
+        next(new Error('Incorrect username '));
         return;
       }
 
